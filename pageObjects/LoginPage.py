@@ -23,7 +23,7 @@ class Loginpage(BrowserUtils):     #nheritance from parent class
         self.driver.get(base_url)
 
     def login(self, username, email, password, DOB, gender):
-        self.driver.find_element(*self.username_input).send_keys(username) # *is used to unpack the tuple into 2 arguments
+        self.driver.find_element(*self.username_input).send_keys(username) 
         self.driver.find_element(*self.email_input).send_keys(email)
         self.driver.find_element(*self.password_input).send_keys(password)
         self.driver.find_element(*self.checkbox_input).click()
@@ -34,6 +34,5 @@ class Loginpage(BrowserUtils):     #nheritance from parent class
         msg = self.driver.find_element(*self.alertsuccess).text
         print(msg)
         assert "Success" in msg
-        #after login() method i know ill landup in shopping page so im calling that object here itself and itll return it
         shop = Shopping(self.driver)
-        return shop  #returing shop so that u can use it in E2E without calling its class there
+        return shop  #returing shop so that it can be used in E2E without calling its class explicitely there
