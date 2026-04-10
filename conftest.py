@@ -3,10 +3,7 @@ import sys
 import os
 from selenium import webdriver
 
-
-
 driver= None
-# Add current directory to Python path so pageObjects can be found
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 def pytest_addoption(parser):
@@ -15,7 +12,7 @@ def pytest_addoption(parser):
 
 @pytest.fixture(scope="function")
 def browserInstance(request):
-    global driver      #this is using the global driver
+    global driver     
     browsername= request.config.getoption("--browsername")
     if browsername== "chrome":
         driver = webdriver.Chrome()
@@ -27,8 +24,8 @@ def browserInstance(request):
 
     driver.implicitly_wait(10)
     driver.maximize_window()
-    yield driver    #returing driver, before test shopping function execution
-    driver.close()  #executes after test function exceution
+    yield driver    
+    driver.close()  
 
 @pytest.fixture(scope="function")
 def env(request):
