@@ -10,7 +10,7 @@
    "country": "United Arab Emirates",
    "URLS": {
     "QA": "https://rahulshettyacademy.com/angularpractice/",
-    "UAT": "https://www.google.com/"
+    "UAT": "https://www.angularpracticeUAT.com/"
    }
   },
    {
@@ -23,7 +23,7 @@
     "country": "India",
     "URLS": {
     "QA": "https://rahulshettyacademy.com/angularpractice/",
-     "UAT": "https://www.google.com/"
+     "UAT": "https://www.angularpracticeUAT.com/"
    }
     }
   ]
