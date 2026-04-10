@@ -1,9 +1,7 @@
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
-
 from Utils.browserUtils import BrowserUtils
-
 
 class CheckoutPage (BrowserUtils):
 
@@ -20,8 +18,8 @@ class CheckoutPage (BrowserUtils):
     def checkoutSummary(self):
 
         m= self.driver.find_element(*self.mobile_incart).text
-        print(m)    # i wanted to print which mobile was there in cart
-        self.driver.find_element(*self.checkout_summary).click()  # this is checkout button in checkout summary of items page.
+        print(m)    
+        self.driver.find_element(*self.checkout_summary).click() 
 
     def countryselection(self,country_name):
         self.driver.find_element(*self.country).send_keys(country_name)
