@@ -6,7 +6,7 @@ from pageObjects.ShoppingItems import Shopping
 file_path = "C:\\Users\\grees\\PycharmProjects\\PythonTesting\\Python Selenium E-commerce application\\data\\E2E_datasets.json"
 with open(file_path) as f:
     test_data = json.load(f)
-    testlist= test_data["data"]          #u need to pass ur key here and store as list
+    testlist= test_data["data"]          
 
 @pytest.mark.smoke
 @pytest.mark.parametrize("testlist_item", testlist)   #im storing test list into a variable testlist_item
