@@ -9,18 +9,18 @@ with open(file_path) as f:
     testlist= test_data["data"]          
 
 @pytest.mark.smoke
-@pytest.mark.parametrize("testlist_item", testlist)   #im storing test list into a variable testlist_item
-def test_EndtoEnd(browserInstance, env, testlist_item):     #here u need to pass testlist_item because ur parameterizing it
-    driver = browserInstance  # browserInstance IS the driver
+@pytest.mark.parametrize("testlist_item", testlist)  
+def test_EndtoEnd(browserInstance, env, testlist_item):     
+    driver = browserInstance 
 
     lnd = Loginpage(driver)
     url = testlist_item["URLS"][env]
     lnd.landingPage(url)
-    print(lnd.getTitle())       #got this method from parent inheritence
-    shop = lnd.login(testlist_item["username"], testlist_item["email"], testlist_item["password"], testlist_item["DOB"],testlist_item["gender"])  #i have chained login and shopping
+    print(lnd.getTitle())       #parent inheritence
+    shop = lnd.login(testlist_item["username"], testlist_item["email"], testlist_item["password"], testlist_item["DOB"],testlist_item["gender"]) 
     shop.ShoppingItems(testlist_item["gadget_name"])
     print(lnd.getTitle())
-    check = shop.goToCart()  #i have chained gotocart and checkout
+    check = shop.goToCart() 
     check.checkoutSummary()
     check.countryselection(testlist_item["country"])
     check.validate_order()
