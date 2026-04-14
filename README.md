@@ -1,10 +1,10 @@
 Python Selenium E-commerce App Automation
 
-# OVERVIEW:
+## OVERVIEW:
 
 Automated test suite for E-commerce application using Python, Selenium WebDriver, and Pytest.
 
-# FEATURES:
+## FEATURES:
 
 User login to the application
 
@@ -24,7 +24,7 @@ HTML Report generation
 
 Automatically captures Screenshot under test failure
 
-# PREREQUISITES:
+## PREREQUISITES:
 
 Java 25
 
@@ -36,11 +36,11 @@ Setup
 
 Clone or unzip the project
 
-# RUN:
+## RUN:
 
 Report will be at reports/reports.html
 
-# STRUCTURE:
+## STRUCTURE:
 
 Page Object Model by using fixtures and parametrize concept
 
