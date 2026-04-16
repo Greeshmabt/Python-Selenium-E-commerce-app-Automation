@@ -8,7 +8,7 @@ Automated test suite for E-commerce application using Python, Selenium WebDriver
 
 User login to the application
 
-Selects gadgets from Shopping cart through Data Driven approach
+Selects gadgets from Shopping page through Data Driven approach
 
 Adds items to Cart
 
@@ -32,9 +32,7 @@ Python
 
 Chrome
 
-Setup
-
-Clone or unzip the project
+Selenium Setup
 
 ## RUN:
 
@@ -44,6 +42,6 @@ Report will be at reports/reports.html
 
 Page Object Model by using fixtures and parametrize concept
 
-Data driver approach for dynamic user inputs
+Data driven approach for dynamic user inputs
 
 hooks/- For Extend report concept
