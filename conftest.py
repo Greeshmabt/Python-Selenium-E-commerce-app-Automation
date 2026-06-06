@@ -1,6 +1,12 @@
-import pytest
+
 import sys
 import os
+
+
+driver = None
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
@@ -16,8 +22,6 @@ def pytest_runtest_setup(item):
     logger.info(f"Starting test: {item.name}")
 
 
-driver = None
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 
 def pytest_addoption(parser):
