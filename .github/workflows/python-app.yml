@@ -62,11 +62,11 @@ jobs:
           SUITE="smoke"
         fi
         
-        # 2. Run tests and export results to an html report file
+        # 2. Run tests and export results to an html report file and Added PYTHONPATH=. to fix the custom module import paths!
         if [ "$SUITE" == "all" ]; then
-          pytest --browser=$BROWSER --html=report_${{ matrix.browser }}.html --self-contained-html
+          PYTHONPATH=. pytest --html=report_${{ matrix.browser }}.html --self-contained-html
         else
-          pytest -m "$SUITE" --browser=$BROWSER --html=report_${{ matrix.browser }}.html --self-contained-html
+          PYTHONPATH=. pytest -m "$SUITE" --html=report_${{ matrix.browser }}.html --self-contained-html
         fi
 
     # This step uploads your report file so you can view it directly on GitHub
