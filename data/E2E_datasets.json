@@ -1,0 +1,30 @@
+{
+ "data" : [
+  {
+   "username": "Greeshma",
+   "email": "greeshmabtgowda@gmail.com",
+   "password": "Sonu@1234",
+   "DOB": "29-10-1998",
+   "gender": "Female",
+   "gadget_name": "Blackberry",
+   "country": "United Arab Emirates",
+   "URLS": {
+    "QA": "https://rahulshettyacademy.com/angularpractice/",
+    "UAT": "https://www.google.com/"
+   }
+  },
+   {
+    "username" : "Gowda",
+    "email" : "greeshmabtgowda@gmail.com",
+    "password" : "Sonu@1234",
+    "DOB": "16-10-1993",
+    "gender": "Male",
+    "gadget_name": "Nokia Edge",
+    "country": "India",
+    "URLS": {
+    "QA": "https://rahulshettyacademy.com/angularpractice/",
+     "UAT": "https://www.google.com/"
+   }
+    }
+  ]
+}

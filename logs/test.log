@@ -1,0 +1,42 @@
+2026-05-07 11:50:05,291 - INFO - Starting test: test_EndtoEnd[testlist_item0]
+2026-05-07 11:50:05,984 - INFO - Starting end-to-end test
+2026-05-07 11:50:07,236 - INFO - ProtoCommerce
+2026-05-07 11:50:08,779 - INFO - ProtoCommerce
+2026-05-07 11:50:14,220 - INFO - Test completed successfully
+2026-05-07 11:50:14,357 - INFO - Starting test: test_EndtoEnd[testlist_item1]
+2026-05-07 11:50:15,669 - INFO - Starting end-to-end test
+2026-05-07 11:50:16,679 - INFO - ProtoCommerce
+2026-05-07 11:50:18,118 - INFO - ProtoCommerce
+2026-05-07 11:50:23,573 - INFO - Test completed successfully
+2026-05-07 11:59:36,063 - INFO - Starting test: test_EndtoEnd[testlist_item0]
+2026-05-07 11:59:36,800 - INFO - Starting end-to-end test
+2026-05-07 11:59:38,320 - INFO - ProtoCommerce
+2026-05-07 11:59:38,841 - INFO - Login completed successfully
+2026-05-07 11:59:39,822 - INFO - Items got added to cart
+2026-05-07 11:59:39,827 - INFO - ProtoCommerce
+2026-05-07 11:59:45,303 - INFO - Order is placed
+2026-05-07 11:59:45,304 - INFO - Test completed successfully
+2026-05-07 11:59:45,373 - INFO - Starting test: test_EndtoEnd[testlist_item1]
+2026-05-07 11:59:46,612 - INFO - Starting end-to-end test
+2026-05-07 11:59:47,578 - INFO - ProtoCommerce
+2026-05-07 11:59:48,021 - INFO - Login completed successfully
+2026-05-07 11:59:48,883 - INFO - Items got added to cart
+2026-05-07 11:59:48,886 - INFO - ProtoCommerce
+2026-05-07 11:59:54,323 - INFO - Order is placed
+2026-05-07 11:59:54,323 - INFO - Test completed successfully
+2026-05-07 16:01:25,267 - INFO - Starting test: test_EndtoEnd[testlist_item0]
+2026-05-07 16:01:29,340 - INFO - Starting end-to-end test
+2026-05-07 16:01:31,439 - INFO - ProtoCommerce
+2026-05-07 16:01:32,083 - INFO - Login completed successfully
+2026-05-07 16:01:33,284 - INFO - Items got added to cart
+2026-05-07 16:01:33,290 - INFO - ProtoCommerce
+2026-05-07 16:01:38,903 - INFO - Order is placed
+2026-05-07 16:01:38,903 - INFO - Test completed successfully
+2026-05-07 16:01:39,002 - INFO - Starting test: test_EndtoEnd[testlist_item1]
+2026-05-07 16:01:40,279 - INFO - Starting end-to-end test
+2026-05-07 16:01:41,940 - INFO - ProtoCommerce
+2026-05-07 16:01:42,420 - INFO - Login completed successfully
+2026-05-07 16:01:43,825 - INFO - Items got added to cart
+2026-05-07 16:01:43,831 - INFO - ProtoCommerce
+2026-05-07 16:01:49,354 - INFO - Order is placed
+2026-05-07 16:01:49,354 - INFO - Test completed successfully
