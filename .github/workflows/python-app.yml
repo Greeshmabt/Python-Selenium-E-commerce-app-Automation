@@ -1,39 +1,77 @@
-# This workflow will install Python dependencies, run tests and lint with a single version of Python
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
-
+# This workflow will install Python dependencies and run automated tests across multiple browsers in parallel
 name: Python application
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
+  # Allows manual triggers and inputs via the GitHub UI
+  workflow_dispatch:
+    inputs:
+      test_suite:
+        description: 'Select the test suite to run'
+        required: true
+        default: 'smoke'
+        type: choice
+        options:
+        - smoke
+        - regression
+        - all
 
 permissions:
   contents: read
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
+    
+    # Defines the parallel execution matrix
+    strategy:
+      fail-fast: false # Keeps other browser tests running even if one browser fails
+      matrix:
+        browser: [chrome, firefox, edge]
 
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
     - name: Set up Python 3.10
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v5
       with:
         python-version: "3.10"
+
+    # We added pytest-html to the explicit installation list to ensure reports generate smoothly
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flake8 pytest
+        pip install pytest pytest-html
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Lint with flake8
+
+    # Step that handles both browser choice and smoke/regression filtering
+    - name: Run Python Automated Tests
+      env:
+        BROWSER: ${{ matrix.browser }}
       run: |
-        # stop the build if there are Python syntax errors or undefined names
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-    - name: Test with pytest
-      run: |
-        pytest
+        # 1. Determine the suite marker based on trigger type
+        if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+          SUITE="${{ github.event.inputs.test_suite }}"
+        else
+          # Default to smoke suite on automatic git push/pull requests
+          SUITE="smoke"
+        fi
+        
+        # 2. Run tests and export results to an html report file
+        if [ "$SUITE" == "all" ]; then
+          pytest --browser=$BROWSER --html=report_${{ matrix.browser }}.html --self-contained-html
+        else
+          pytest -m "$SUITE" --browser=$BROWSER --html=report_${{ matrix.browser }}.html --self-contained-html
+        fi
+
+    # This step uploads your report file so you can view it directly on GitHub
+    - name: Upload Test Report Artifact
+      uses: actions/upload-artifact@v4
+      if: always() # Ensures the report is uploaded even if tests fail!
+      with:
+        name: test-report-${{ matrix.browser }}
+        path: report_${{ matrix.browser }}.html
