@@ -1,5 +1,5 @@
 # This workflow will install Python dependencies and run automated tests across multiple browsers in parallel
-name: Python application
+name: QA automation tests
 
 on:
   push:
